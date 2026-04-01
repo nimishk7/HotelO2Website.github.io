@@ -1,0 +1,78 @@
+@import "tailwindcss";
+
+@font-face {
+  font-family: 'Playfair Display';
+  src: url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&display=swap');
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+}
+
+@theme {
+  --color-primary: #ffba5a;
+  --color-primary-dark: #e6a14a;
+  --color-secondary: #6c757d;
+  --color-light: #f2f4fb;
+  --color-dark: #1a1a1a;
+  
+  --font-sans: "Roboto", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", ui-serif, Georgia, serif;
+}
+
+@layer base {
+  body {
+    @apply font-sans bg-white text-secondary leading-loose;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-black leading-tight;
+  }
+}
+
+@layer components {
+  .section {
+    @apply py-20 lg:py-28;
+  }
+  
+  .btn {
+    @apply px-8 py-3 rounded-full transition-all duration-300 uppercase tracking-[0.2em] text-sm font-medium inline-block;
+  }
+  
+  .btn-outline-white-primary {
+    @apply border-2 border-white text-white hover:bg-primary hover:border-primary hover:text-white;
+  }
+  
+  .btn-primary {
+    @apply bg-primary text-white hover:bg-primary-dark;
+  }
+  
+  .container-custom {
+    @apply max-w-[1600px] mx-auto px-4;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 100px; /* Big task, big scrollbar? No, just joking, matched to old style's feel */
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #ffba5a;
+  border-radius: 5px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #e6a14a;
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}

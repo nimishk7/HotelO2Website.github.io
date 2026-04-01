@@ -43,7 +43,7 @@ const Amenities = () => {
             <h2 className="text-4xl lg:text-5xl font-bold mb-6">Our Amenities</h2>
             <p className="text-secondary text-lg leading-relaxed">
               Hotel O2 offers a wide range of amenities to make your stay comfortable and convenient. 
-              As a 3-star hotel, we take pride in our cleanliness and quality service.
+              We take pride in our cleanliness and quality service.
             </p>
           </motion.div>
         </div>

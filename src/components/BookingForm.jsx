@@ -19,7 +19,7 @@ const BookingForm = () => {
       return date.toLocaleDateString('en-GB', options);
     };
 
-    const phoneNumber = "919404284732"; 
+    const phoneNumber = "919765380202"; 
     const message = `Hello, I would like to book rooms in your hotel from ${formatDate(checkIn)} to ${formatDate(checkOut)}. Please let me know the availability.`;
     const whatsappUrl = `https://wa.me/${phoneNumber}?text=${encodeURIComponent(message)}`;
     

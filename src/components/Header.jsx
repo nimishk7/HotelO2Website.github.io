@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X } from 'lucide-react';
+import { Menu, X, MapPin } from 'lucide-react';
 import { clsx } from 'clsx';
 import { twMerge } from 'tailwind-merge';
 
@@ -68,15 +68,29 @@ const Header = () => {
             </Link>
           </div>
 
-          <button
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-            className={cn(
-              'z-[101] p-2 transition-colors duration-300',
-              isScrolled || isMenuOpen ? 'text-black' : 'text-white'
-            )}
-          >
-            {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
-          </button>
+          <div className="flex items-center gap-2">
+            <a
+              href="https://maps.app.goo.gl/EkZjx1Sgz8ukf7wg7"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={cn(
+                'p-2 transition-colors duration-300',
+                isScrolled || isMenuOpen ? 'text-black' : 'text-white'
+              )}
+            >
+              <MapPin size={28} />
+            </a>
+            
+            <button
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+              className={cn(
+                'z-[101] p-2 transition-colors duration-300',
+                isScrolled || isMenuOpen ? 'text-black' : 'text-white'
+              )}
+            >
+              {isMenuOpen ? <X size={32} /> : <Menu size={32} />}
+            </button>
+          </div>
         </div>
       </div>
 

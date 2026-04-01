@@ -2,7 +2,6 @@ import React from 'react';
 import { 
   Wifi, 
   Utensils, 
-  GlassWater, 
   DoorOpen, 
   ParkingCircle, 
   ConciergeBell, 
@@ -17,18 +16,18 @@ import { motion } from 'framer-motion';
 
 const Amenities = () => {
   const amenities = [
-    { icon: Wifi, title: "Free Wi-Fi", desc: "Stay connected with high-speed internet" },
-    { icon: Utensils, title: "Restaurant", desc: "Enjoy delicious meals at our restaurant" },
+    { icon: Home, title: "Clean Rooms", desc: "Spacious accommodations" },
+    { icon: Snowflake, title: "Air Conditioning", desc: "All rooms climate controlled" },
+    { icon: Users, title: "Meeting Rooms", desc: "Professional spaces for meetings" },
     { icon: DoorOpen, title: "Banquet Hall", desc: "Perfect venue for weddings and events" },
+    { icon: Wifi, title: "Free Wi-Fi", desc: "Stay connected with high-speed internet" },
+    { icon: Utensils, title: "Pure Veg Restaurant", desc: "Enjoy delicious meals at our restaurant" },
+    { icon: PhoneCall, title: "Intercom", desc: "Easy communication with services" },
     { icon: ConciergeBell, title: "24-Hour Front Desk", desc: "Our staff is always available" },
     { icon: ParkingCircle, title: "Free Parking", desc: "Secure parking space for all guests" },
     { icon: PhoneCall, title: "Room Service", desc: "Enjoy meals in your room" },
     { icon: Shirt, title: "Laundry Service", desc: "Professional laundry services" },
     { icon: Sparkles, title: "Housekeeping", desc: "Daily cleaning for high standards" },
-    { icon: Snowflake, title: "Air Conditioning", desc: "All rooms climate controlled" },
-    { icon: PhoneCall, title: "Intercom", desc: "Easy communication with services" },
-    { icon: Users, title: "Meeting Rooms", desc: "Professional spaces for meetings" },
-    { icon: Home, title: "Family Rooms", desc: "Spacious accommodations" }
   ];
 
   return (

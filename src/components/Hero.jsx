@@ -25,7 +25,8 @@ const Hero = () => {
         >
           <span className="block text-white uppercase tracking-widest text-sm mb-6 font-medium">Welcome to</span>
           <h1 className="text-6xl md:text-7xl text-white font-bold mb-8">
-            Hotel O2 <br className="hidden md:block" /> Best Place To Stay In Sangli
+            Hotel O2 <br className="hidden md:block" /> 
+            <span className="font-serif italic">Best Place To Stay In Sangli</span>
           </h1>
         </motion.div>
       </div>

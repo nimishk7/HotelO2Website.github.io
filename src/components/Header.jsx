@@ -69,7 +69,7 @@ const Header = () => {
           </div>
 
           <div className="flex items-center gap-2">
-            <a
+            {/* <a
               href="https://maps.app.goo.gl/EkZjx1Sgz8ukf7wg7"
               target="_blank"
               rel="noopener noreferrer"
@@ -79,7 +79,7 @@ const Header = () => {
               )}
             >
               <MapPin size={28} />
-            </a>
+            </a> */}
             
             <button
               onClick={() => setIsMenuOpen(!isMenuOpen)}

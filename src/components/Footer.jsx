@@ -28,7 +28,7 @@ const Footer = () => {
               <span className="absolute bottom-[-10px] left-0 w-12 h-1 bg-primary rounded-full"></span>
             </h4>
             <ul className="space-y-4">
-              <li><Link to="/#rooms" className="text-white/60 hover:text-primary transition-colors">The Rooms & Suites</Link></li>
+              <li><Link to="/#rooms" className="text-white/60 hover:text-primary transition-colors">The Rooms</Link></li>
               <li><Link to="/contact" className="text-white/60 hover:text-primary transition-colors">Contact Us</Link></li>
               <li><Link to="/#amenities" className="text-white/60 hover:text-primary transition-colors">Amenities</Link></li>
             </ul>

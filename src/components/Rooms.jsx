@@ -1,25 +1,59 @@
-import React from 'react';
-import { motion } from 'framer-motion';
+import React, { useState, useEffect } from 'react';
+import { motion, AnimatePresence } from 'framer-motion';
+import { Tv, Wifi, Wind } from 'lucide-react';
+
+const AutoCarousel = ({ images }) => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + 1) % images.length);
+    }, 2000);
+    return () => clearInterval(interval);
+  }, [images.length]);
+
+  return (
+    <div className="relative w-full h-full overflow-hidden">
+      <AnimatePresence mode="wait">
+        <motion.img
+          key={currentIndex}
+          src={images[currentIndex]}
+          alt="Room View"
+          initial={{ opacity: 0.2, scale: 1.05 }}
+          animate={{ opacity: 1, scale: 1 }}
+          exit={{ opacity: 0.2, scale: 0.95 }}
+          transition={{ duration: 0.8 }}
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+      </AnimatePresence>
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+    </div>
+  );
+};
 
 const Rooms = () => {
   const rooms = [
     {
-      title: "Single Room",
+      title: "Deluxe Room",
       price: "xyz₹",
-      image: "/images/room10.jpg",
+      images: [
+        "/images/room1.jpeg",
+        "/images/room2.jpeg",
+        "/images/room3.jpeg",
+        "/images/bath1.jpeg"
+      ],
       delay: 0.1
     },
     {
-      title: "Family Room",
+      title: "Super Deluxe Room",
       price: "xyz₹",
-      image: "/images/room4.jpeg",
+      images: [
+        "/images/room4.jpeg",
+        "/images/room5.jpeg",
+        "/images/room6.jpeg",
+        "/images/bath2.jpeg"
+      ],
       delay: 0.2
-    },
-    {
-      title: "Presidential Room",
-      price: "xyz₹",
-      image: "/images/room1.jpeg",
-      delay: 0.3
     }
   ];
 
@@ -42,7 +76,7 @@ const Rooms = () => {
           </motion.div>
         </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-10">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
           {rooms.map((room, index) => (
             <motion.div
               key={index}
@@ -52,14 +86,9 @@ const Rooms = () => {
               viewport={{ once: true }}
               className="group cursor-pointer bg-white rounded-2xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500"
             >
-              <div className="relative overflow-hidden h-72">
-                <img 
-                  src={room.image} 
-                  alt={room.title} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
-                <div className="absolute bottom-6 right-6">
+              <div className="relative overflow-hidden h-72 lg:h-80">
+                <AutoCarousel images={room.images} />
+                <div className="absolute bottom-6 right-6 z-10">
                   <span className="bg-primary text-white font-bold py-2 px-6 rounded-full shadow-lg">
                     {room.price} / night
                   </span>
@@ -69,7 +98,12 @@ const Rooms = () => {
                 <h3 className="text-2xl font-bold text-black mb-2 transition-colors duration-300 group-hover:text-primary">
                   {room.title}
                 </h3>
-                <p className="text-secondary text-sm uppercase tracking-widest font-bold">Standard Amenities Included</p>
+                <p className="text-secondary text-sm uppercase tracking-widest font-bold mb-4">Standard Amenities Included</p>
+                <div className="flex items-center justify-center gap-8 text-primary">
+                  <Tv size={22} />
+                  <Wifi size={22} />
+                  <Wind size={22} />
+                </div>
               </div>
             </motion.div>
           ))}

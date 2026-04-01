@@ -6,7 +6,7 @@ const CTA = () => {
   return (
     <section 
       className="py-24 relative overflow-hidden bg-cover bg-center"
-      style={{ backgroundImage: "url('/images/hero_4.jpg')" }}
+      style={{ backgroundImage: "url('/images/res3.jpeg')" }}
     >
       <div className="absolute inset-0 bg-black/60 backdrop-blur-[2px]"></div>
       

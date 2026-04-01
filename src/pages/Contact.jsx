@@ -8,14 +8,14 @@ const Contact = () => {
       {/* Hero Section */}
       <section 
         className="relative h-[60vh] min-h-[500px] flex items-center justify-center bg-cover bg-center"
-        style={{ backgroundImage: "url('/images/hero_4.jpg')" }}
+        style={{ backgroundImage: "url('/images/res3.jpeg')" }}
       >
         <div className="absolute inset-0 bg-black/50"></div>
         <div className="relative z-10 text-center text-white px-4">
           <motion.h1 
             initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            className="text-5xl md:text-7xl font-bold mb-4"
+            className="text-5xl md:text-7xl text-white font-bold mb-4"
           >
             Contact Us
           </motion.h1>

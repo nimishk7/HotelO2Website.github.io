@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://hotelo2.in/sitemap.xml
+Sitemap: https://demohotelo2.netlify.app/

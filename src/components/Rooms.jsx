@@ -14,19 +14,19 @@ const AutoCarousel = ({ images }) => {
 
   return (
     <div className="relative w-full h-full overflow-hidden">
-      <AnimatePresence mode="wait">
+      <AnimatePresence initial={false}>
         <motion.img
           key={currentIndex}
           src={images[currentIndex]}
           alt="Room View"
-          initial={{ opacity: 0.2, scale: 1.05 }}
-          animate={{ opacity: 1, scale: 1 }}
-          exit={{ opacity: 0.2, scale: 0.95 }}
-          transition={{ duration: 0.8 }}
+          initial={{ x: '100%', opacity: 1 }}
+          animate={{ x: 0, opacity: 1 }}
+          exit={{ x: '-100%', opacity: 1 }}
+          transition={{ duration: 0.8, ease: "easeInOut" }}
           className="absolute inset-0 w-full h-full object-cover"
         />
       </AnimatePresence>
-      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500"></div>
+      <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-colors duration-500 z-10"></div>
     </div>
   );
 };
@@ -35,7 +35,6 @@ const Rooms = () => {
   const rooms = [
     {
       title: "Deluxe Room",
-      price: "xyz₹",
       images: [
         "/images/room1.jpeg",
         "/images/room2.jpeg",
@@ -46,7 +45,6 @@ const Rooms = () => {
     },
     {
       title: "Super Deluxe Room",
-      price: "xyz₹",
       images: [
         "/images/room4.jpeg",
         "/images/room5.jpeg",
@@ -88,11 +86,7 @@ const Rooms = () => {
             >
               <div className="relative overflow-hidden h-72 lg:h-80">
                 <AutoCarousel images={room.images} />
-                <div className="absolute bottom-6 right-6 z-10">
-                  <span className="bg-primary text-white font-bold py-2 px-6 rounded-full shadow-lg">
-                    {room.price} / night
-                  </span>
-                </div>
+
               </div>
               <div className="p-8 text-center bg-white border-t border-gray-100">
                 <h3 className="text-2xl font-bold text-black mb-2 transition-colors duration-300 group-hover:text-primary">
